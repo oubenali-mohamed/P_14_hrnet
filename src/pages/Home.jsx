@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import { Row } from 'react-bootstrap'
 import '../utils/styles.css'
+import dataState from '../datas/dataState.json'
+let cities = ''
 
 function Home() {
   const [validated, setValidated] = useState(false)
@@ -17,6 +19,8 @@ function Home() {
 
     setValidated(true)
   }
+  cities = dataState
+
   return (
     <div>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -93,7 +97,9 @@ function Home() {
                 className="SelectState"
                 aria-label="Default select example"
               >
-                <option>State</option>
+                {cities.map((city, index) => (
+                  <option key={index}>{city.name}</option>
+                ))}
               </Form.Select>
             </Form.Group>
 
