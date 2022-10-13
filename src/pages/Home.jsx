@@ -3,12 +3,15 @@ import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import { Row } from 'react-bootstrap'
+import Modal from 'react-bootstrap/Modal'
+import Alert from 'react-bootstrap/Alert'
 import '../utils/styles.css'
 import dataState from '../datas/dataState.json'
 let cities = ''
 
 function Home() {
   const [validated, setValidated] = useState(false)
+  const [show, setShow] = useState(false)
 
   const handleSubmit = (event) => {
     const form = event.currentTarget
@@ -130,10 +133,18 @@ function Home() {
             </Form.Group>
           </Row>
         </div>
-        <Button type="submit" size="lg">
+        <Button type="submit" size="lg" onClick={() => setShow(true)}>
           Save
         </Button>
       </Form>
+      <Modal show={show} onHide={() => setShow(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Success</Modal.Title>
+        </Modal.Header>
+        <Alert variant="success">
+          <Modal.Body>Your employe is added to employee list</Modal.Body>
+        </Alert>
+      </Modal>
     </div>
   )
 }
