@@ -102,3 +102,10 @@ h1 {
 th {
   text-align: center;
 }
+.inputDate {
+  height: 38px;
+  margin-left: 5px;
+  width: 200px;
+  border: 1px solid #ced4d9;
+  border-radius: 5px;
+}

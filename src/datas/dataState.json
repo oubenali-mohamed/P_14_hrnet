@@ -1,5 +1,15 @@
 [
   {
+    "department": [
+      "Sales",
+      "Marketing",
+      "Engineering",
+      "Human Resources",
+      "Legal"
+    ]
+  },
+
+  {
     "name": "Alabama",
     "abbreviation": "AL"
   },

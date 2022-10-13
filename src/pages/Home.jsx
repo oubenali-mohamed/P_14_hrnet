@@ -7,8 +7,10 @@ import Modal from 'react-bootstrap/Modal'
 import Alert from 'react-bootstrap/Alert'
 import '../utils/styles.css'
 import dataState from '../datas/dataState.json'
-let cities = ''
+import DatePicker from '../components/DatePicker/DatePicker'
 
+let cities = ''
+let departments = ''
 function Home() {
   const [validated, setValidated] = useState(false)
   const [show, setShow] = useState(false)
@@ -23,6 +25,7 @@ function Home() {
     setValidated(true)
   }
   cities = dataState
+  departments = cities[0].department
 
   return (
     <div>
@@ -56,7 +59,7 @@ function Home() {
               controlId="validationCustom01"
             >
               <Form.Label>Date of Birth</Form.Label>
-              <Form.Control required type="date" />
+              <DatePicker />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
             <Form.Group
@@ -66,7 +69,7 @@ function Home() {
               controlId="validationCustom01"
             >
               <Form.Label>Start Date</Form.Label>
-              <Form.Control required type="date" />
+              <DatePicker />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -124,11 +127,9 @@ function Home() {
                 className="SelectDepartment"
                 aria-label="Default select example"
               >
-                <option>Sales</option>
-                <option value="1">Marketing</option>
-                <option value="2">Engineering</option>
-                <option value="3">Human Resources</option>
-                <option value="4">Legal</option>
+                {departments.map((department, index) => (
+                  <option key={index}>{department}</option>
+                ))}
               </Form.Select>
             </Form.Group>
           </Row>
