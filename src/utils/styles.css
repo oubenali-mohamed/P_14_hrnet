@@ -105,7 +105,21 @@ th {
 .inputDate {
   height: 38px;
   margin-left: 5px;
-  width: 200px;
+  width: 220px;
   border: 1px solid #ced4d9;
   border-radius: 5px;
+}
+table {
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+thead {
+  display: flex;
+  flex-direction: row;
+}
+.trColumn {
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 1px solid black;
 }
