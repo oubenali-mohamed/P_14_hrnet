@@ -3,17 +3,15 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 function Datepicker() {
-  const [startDate, setStartDate] = useState(new Date())
+  const [startDate, setStartDate] = useState(null)
 
   return (
-    <div>
-      <DatePicker
-        className="inputDate"
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        dateFormat="dd/MM/yyyy"
-      />
-    </div>
+    <DatePicker
+      className="inputDate"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      dateFormat="dd/MM/yyyy"
+    />
   )
 }
 

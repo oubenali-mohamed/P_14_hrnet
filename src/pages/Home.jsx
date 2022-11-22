@@ -11,21 +11,19 @@ import DatePicker from '../components/DatePicker/DatePicker'
 
 let cities = ''
 let departments = ''
+let FirstName = ''
+let LastName = ''
+let DateOfBirth = ''
+let StarteDate = ''
+let Street = ''
+let City = ''
+let State = ''
+let ZipCode = ''
+let Department = ''
 
 function Home() {
   const [validated, setValidated] = useState(false)
   const [show, setShow] = useState(false)
-  /* const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    dateOfBirth: '',
-    startDate: '',
-    street: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    department: '',
-  }) */
 
   const handleSubmit = (event) => {
     const form = event.currentTarget
@@ -33,7 +31,6 @@ function Home() {
       event.preventDefault()
       event.stopPropagation()
     }
-
     setValidated(true)
   }
 
@@ -42,15 +39,39 @@ function Home() {
 
   const handleChange = (event) => {
     // console.log(event.target.value)
+    FirstName = document.querySelector('.firstName').value
+    LastName = document.querySelector('.lastName').value
+    City = document.querySelector('.city').value
+    ZipCode = document.querySelector('.zipCode').value
+    Street = document.querySelector('.street').value
+    State = document.querySelector('.SelectState').value
+    Department = document.querySelector('.SelectDepartment').value
+    let inputDateBirth = document.querySelectorAll('.inputDate')[0].value
+    DateOfBirth = inputDateBirth
+    let inputDateStart = document.querySelectorAll('.inputDate')[1].value
+    StarteDate = inputDateStart
   }
-  let userLocalStorage = localStorage.getItem('user')
+
+  let employee = {
+    firstName: FirstName,
+    lastName: LastName,
+    city: City,
+    zipCode: ZipCode,
+    street: Street,
+    state: State,
+    department: Department,
+    dateOfBirth: DateOfBirth,
+    startDate: StarteDate,
+  }
+
+  let userLocalStorage = localStorage.getItem('employee')
   if (userLocalStorage == null) {
     userLocalStorage = []
   } else {
     userLocalStorage = JSON.parse(userLocalStorage)
   }
-  // userLocalStorage.push(user)
-  localStorage.setItem('user', JSON.stringify(userLocalStorage))
+  userLocalStorage.push(employee)
+  localStorage.setItem('employee', JSON.stringify(userLocalStorage))
 
   return (
     <div>
@@ -63,7 +84,7 @@ function Home() {
               md="2"
               controlId="validationCustom01"
             >
-              <Form.Label>First name</Form.Label>
+              <Form.Label>First Name</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -118,7 +139,12 @@ function Home() {
               controlId="validationCustom01"
             >
               <Form.Label>Street</Form.Label>
-              <Form.Control required type="text" className="street" />
+              <Form.Control
+                required
+                type="text"
+                className="street"
+                onChange={handleChange}
+              />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
             <Form.Group
@@ -128,7 +154,12 @@ function Home() {
               controlId="validationCustom01"
             >
               <Form.Label>City</Form.Label>
-              <Form.Control required type="text" className="city" />
+              <Form.Control
+                required
+                type="text"
+                className="city"
+                onChange={handleChange}
+              />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
 
@@ -137,6 +168,7 @@ function Home() {
               <Form.Select
                 className="SelectState"
                 aria-label="Default select example"
+                // onChange={handleChange}
               >
                 {cities.map((city, index) => (
                   <option className="stateUser" key={index}>
@@ -153,7 +185,12 @@ function Home() {
               controlId="validationCustom01"
             >
               <Form.Label>Zip Code</Form.Label>
-              <Form.Control required type="text" className="zipCode" />
+              <Form.Control
+                required
+                type="text"
+                className="zipCode"
+                onChange={handleChange}
+              />
               <Form.Control.Feedback>Valid</Form.Control.Feedback>
             </Form.Group>
           </Row>
@@ -163,6 +200,7 @@ function Home() {
               <Form.Select
                 className="SelectDepartment"
                 aria-label="Default select example"
+                onChange={handleChange}
               >
                 {departments.map((department, index) => (
                   <option className="departmentUser" key={index}>

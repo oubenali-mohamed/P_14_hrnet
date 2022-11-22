@@ -65,10 +65,7 @@ h1 {
   height: 37px;
   width: 15%;
 }
-.tableEmploye {
-  width: 90%;
-  margin: 60px auto;
-}
+
 .link_home_employe {
   color: #5d7e94a3;
   text-decoration: none;
@@ -80,18 +77,7 @@ h1 {
 .link_home_employe:hover {
   color: rgba(3, 63, 96, 0.673);
 }
-.containerSearch {
-  margin-top: 60px;
-  padding-left: 80px;
-}
 
-.showEntries {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.search {
-  margin-left: 890px;
-}
 .labelDepartment {
   margin-left: 42%;
   margin-top: 50px;
@@ -99,9 +85,7 @@ h1 {
 .labelState {
   margin-top: 30px;
 }
-th {
-  text-align: center;
-}
+
 .inputDate {
   height: 38px;
   margin-left: 5px;
@@ -109,17 +93,21 @@ th {
   border: 1px solid #ced4d9;
   border-radius: 5px;
 }
+.table {
+  margin: auto 100px;
+}
 table {
   margin-top: 50px;
-  margin-left: 10%;
   margin-bottom: 20px;
+  width: 80%;
 }
+/* tbody,
 thead {
-  display: flex;
-  flex-direction: row;
-}
-.trColumn {
-  padding-left: 25px;
-  padding-right: 25px;
-  border: 1px solid black;
+  border: none;
+} */
+.th {
+  text-align: center;
+  margin-top: auto;
+  background-color: #797d8049;
+  padding: 10px;
 }
