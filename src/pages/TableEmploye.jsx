@@ -27,6 +27,20 @@ const columnsTable = [
 function TableEmploye() {
   return (
     <div className="table">
+      <div className="Show">
+        <label className="labelShow">Show</label>
+        <select>
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+          <option>100</option>
+        </select>
+        <label className="labelEntries">Entries</label>
+        <label className="labelSearch">
+          Search
+          <input type="search" className="search" />
+        </label>
+      </div>
       <TableEmployee
         columns={columnsTable}
         rows={rows.map((row) => (
