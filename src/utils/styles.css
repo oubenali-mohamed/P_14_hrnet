@@ -105,7 +105,10 @@ th {
   padding: 10px;
 }
 thead > tr {
-  background-color: #969da3;
+  background-color: #969da39c;
+}
+tbody > tr {
+  background-color: #c2c7cb54;
 }
 .headerSearch {
   margin-top: 50px;

@@ -5,19 +5,16 @@ import ShowList from '../components/ShowList/ShowList'
 import Search from '../components/Search/Search'
 import ShowPages from '../components/ShowPages/ShowPages'
 import '../utils/styles.css'
+
 // récupération du tableau dans le localStorage
-let row = ''
 let userLocalStorage = localStorage.getItem('employee')
 if (userLocalStorage == null) {
   alert('aucun employée dans la liste')
 } else {
   userLocalStorage = JSON.parse(userLocalStorage)
 }
+
 const rows = userLocalStorage
-for (let i = 0; i < rows.length; i++) {
-  row = rows[i]
-  console.log(row)
-}
 const columnsTable = [
   'FirstName',
   'LastName',
@@ -37,7 +34,7 @@ function TableEmploye() {
         <ShowList />
         <Search />
       </div>
-      <TableEmployee columns={columnsTable} row={row} />
+      <TableEmployee columns={columnsTable} rows={rows} />
       <ShowPages />
       <NavLink className="link_home_employe" to="/">
         Home
