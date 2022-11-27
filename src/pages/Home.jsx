@@ -11,15 +11,15 @@ import DatePicker from '../components/DatePicker/DatePicker'
 
 let cities = ''
 let departments = ''
-let FirstName = ''
-let LastName = ''
-let DateOfBirth = ''
-let StarteDate = ''
-let Street = ''
-let City = ''
-let State = ''
-let ZipCode = ''
-let Department = ''
+let firstName = ''
+let lastName = ''
+let dateOfBirth = ''
+let startDate = ''
+let street = ''
+let city = ''
+let state = ''
+let zipCode = ''
+let department = ''
 
 function Home() {
   const [validated, setValidated] = useState(false)
@@ -32,6 +32,14 @@ function Home() {
       event.stopPropagation()
     }
     setValidated(true)
+    let userLocalStorage = localStorage.getItem('employee')
+    if (userLocalStorage == null) {
+      userLocalStorage = []
+    } else {
+      userLocalStorage = JSON.parse(userLocalStorage)
+    }
+    userLocalStorage.push(employee)
+    localStorage.setItem('employee', JSON.stringify(userLocalStorage))
   }
 
   departments = dataState[0].department
@@ -39,40 +47,29 @@ function Home() {
 
   const handleChange = (event) => {
     // console.log(event.target.value)
-    FirstName = document.querySelector('.firstName').value
-    LastName = document.querySelector('.lastName').value
-    City = document.querySelector('.city').value
-    ZipCode = document.querySelector('.zipCode').value
-    Street = document.querySelector('.street').value
-    State = document.querySelector('.SelectState').value
-    Department = document.querySelector('.SelectDepartment').value
+    firstName = document.querySelector('.firstName').value
+    lastName = document.querySelector('.lastName').value
+    city = document.querySelector('.city').value
+    zipCode = document.querySelector('.zipCode').value
+    street = document.querySelector('.street').value
+    state = document.querySelector('.SelectState').value
+    department = document.querySelector('.SelectDepartment').value
     let inputDateBirth = document.querySelectorAll('.inputDate')[0].value
-    DateOfBirth = inputDateBirth
+    dateOfBirth = inputDateBirth
     let inputDateStart = document.querySelectorAll('.inputDate')[1].value
-    StarteDate = inputDateStart
+    startDate = inputDateStart
   }
-
   let employee = {
-    firstName: FirstName,
-    lastName: LastName,
-    city: City,
-    zipCode: ZipCode,
-    street: Street,
-    state: State,
-    department: Department,
-    dateOfBirth: DateOfBirth,
-    startDate: StarteDate,
+    firstName: firstName,
+    lastName: lastName,
+    city: city,
+    zipCode: zipCode,
+    street: street,
+    state: state,
+    department: department,
+    dateOfBirth: dateOfBirth,
+    startDate: startDate,
   }
-
-  let userLocalStorage = localStorage.getItem('employee')
-  if (userLocalStorage == null) {
-    userLocalStorage = []
-  } else {
-    userLocalStorage = JSON.parse(userLocalStorage)
-  }
-  userLocalStorage.push(employee)
-  localStorage.setItem('employee', JSON.stringify(userLocalStorage))
-
   return (
     <div>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>

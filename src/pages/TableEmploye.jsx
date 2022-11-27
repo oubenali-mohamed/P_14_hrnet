@@ -1,17 +1,23 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import TableEmployee from '../../node_modules/my-table-library/mohamed-table/dist/components/TableEmployee'
-
+import TableEmployee from '../../node_modules/ma-librairie-table/dist/components/TableEmployee'
+import ShowList from '../components/ShowList/ShowList'
+import Search from '../components/Search/Search'
+import ShowPages from '../components/ShowPages/ShowPages'
+import '../utils/styles.css'
 // récupération du tableau dans le localStorage
+let row = ''
 let userLocalStorage = localStorage.getItem('employee')
 if (userLocalStorage == null) {
   alert('aucun employée dans la liste')
 } else {
   userLocalStorage = JSON.parse(userLocalStorage)
 }
-
 const rows = userLocalStorage
-
+for (let i = 0; i < rows.length; i++) {
+  row = rows[i]
+  console.log(row)
+}
 const columnsTable = [
   'FirstName',
   'LastName',
@@ -27,36 +33,12 @@ const columnsTable = [
 function TableEmploye() {
   return (
     <div className="table">
-      <div className="Show">
-        <label className="labelShow">Show</label>
-        <select>
-          <option>10</option>
-          <option>25</option>
-          <option>50</option>
-          <option>100</option>
-        </select>
-        <label className="labelEntries">Entries</label>
-        <label className="labelSearch">
-          Search
-          <input type="search" className="search" />
-        </label>
+      <div className="headerSearch">
+        <ShowList />
+        <Search />
       </div>
-      <TableEmployee
-        columns={columnsTable}
-        rows={rows.map((row) => (
-          <>
-            <td>{row.firstName}</td>
-            <td>{row.lastName}</td>
-            <td>{row.city}</td>
-            <td>{row.zipCode}</td>
-            <td>{row.street}</td>
-            <td>{row.state}</td>
-            <td>{row.department}</td>
-            <td>{row.dateOfBirth}</td>
-            <td>{row.startDate}</td>
-          </>
-        ))}
-      />
+      <TableEmployee columns={columnsTable} row={row} />
+      <ShowPages />
       <NavLink className="link_home_employe" to="/">
         Home
       </NavLink>

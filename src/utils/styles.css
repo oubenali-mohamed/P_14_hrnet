@@ -65,13 +65,11 @@ h1 {
   height: 37px;
   width: 15%;
 }
-
 .link_home_employe {
   color: #5d7e94a3;
   text-decoration: none;
   font-size: 22px;
-  margin: 47%;
-  margin-top: 80px;
+  margin-left: 40%;
   font-weight: bold;
 }
 .link_home_employe:hover {
@@ -101,34 +99,45 @@ table {
   margin-bottom: 20px;
   width: 80%;
 }
-/* tbody,
-thead {
-  border: none;
-} */
-.th {
+td,
+th {
   text-align: center;
-  margin-top: auto;
-  background-color: #797d8049;
   padding: 10px;
 }
-.Show {
+thead > tr {
+  background-color: #969da3;
+}
+.headerSearch {
   margin-top: 50px;
   width: 80%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
-.labelShow,
-.labelEntries {
-  margin-right: 20px;
-  margin-left: 20px;
+.Show {
+  display: flex;
+  flex-direction: row;
 }
-select {
-  height: 30px;
+.showList {
+  height: 40px;
+  width: 60px;
 }
-.labelSearch {
-  margin-left: 55%;
+.searchComponent {
+  display: flex;
+  flex-direction: row;
 }
 .search {
-  margin-left: 20px;
-  height: 30px;
+  height: 40px;
+  width: 150px;
+}
+.pages {
+  margin-left: 70%;
+}
+.page-link {
+  font-size: 20px;
+  color: #5d7e94;
+}
+.page-link > span {
+  font-size: 20px;
+  color: #5d7e94;
 }
