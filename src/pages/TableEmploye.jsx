@@ -1,8 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import TableEmployee from '../../node_modules/ma-librairie-table/dist/components/TableEmployee'
-import ShowList from '../components/ShowList/ShowList'
-import Search from '../components/Search/Search'
+// import ShowList from '../components/ShowList/ShowList'
 import ShowPages from '../components/ShowPages/ShowPages'
 import '../utils/styles.css'
 
@@ -15,6 +14,7 @@ if (userLocalStorage == null) {
 }
 
 const rows = userLocalStorage
+
 const columnsTable = [
   'FirstName',
   'LastName',
@@ -30,10 +30,7 @@ const columnsTable = [
 function TableEmploye() {
   return (
     <div className="table">
-      <div className="headerSearch">
-        <ShowList />
-        <Search />
-      </div>
+      <div className="headerSearch">{/* <ShowList /> */}</div>
       <TableEmployee columns={columnsTable} rows={rows} />
       <ShowPages />
       <NavLink className="link_home_employe" to="/">

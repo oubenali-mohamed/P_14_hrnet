@@ -125,13 +125,15 @@ tbody > tr {
   height: 40px;
   width: 60px;
 }
-.searchComponent {
-  display: flex;
-  flex-direction: row;
+.searchList{
+  width: 300px;
+  margin-left: 65%;
 }
-.search {
+#inputSearch{
+  border: 1px solid  #969da39c;
+  border-radius: 5px;
   height: 40px;
-  width: 150px;
+  width: 140px;
 }
 .pages {
   margin-left: 70%;
