@@ -93,11 +93,16 @@ h1 {
 }
 .table {
   margin: auto 100px;
+  width: 90%;
+}
+.table > div {
+  width: 100%;
 }
 table {
   margin-top: 50px;
   margin-bottom: 20px;
-  width: 80%;
+  margin-left: -20px;
+  width: 100%;
 }
 td,
 th {
@@ -110,30 +115,29 @@ thead > tr {
 tbody > tr {
   background-color: #c2c7cb54;
 }
-.headerSearch {
+.selectAndSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin-top: 50px;
-  width: 80%;
+  width: 100%;
+}
+.selectList {
+  width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.Show {
-  display: flex;
-  flex-direction: row;
+.searchList {
+  width: 50%;
+  margin-left: 60%;
 }
-.showList {
-  height: 40px;
-  width: 60px;
-}
-.searchList{
-  width: 300px;
-  margin-left: 65%;
-}
-#inputSearch{
-  border: 1px solid  #969da39c;
+#inputSearch {
+  border: 1px solid #969da39c;
   border-radius: 5px;
   height: 40px;
-  width: 140px;
+  width: 155px;
 }
 .pages {
   margin-left: 70%;
@@ -145,4 +149,34 @@ tbody > tr {
 .page-link > span {
   font-size: 20px;
   color: #5d7e94;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: none;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #eee;
+  border-color: #eee;
+}
+
+.pagination button.active {
+  font-weight: 900;
+  border-color: #101010;
+  background: #969da39c;
+  color: #101010;
 }

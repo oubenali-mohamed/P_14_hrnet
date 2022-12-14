@@ -62,13 +62,13 @@ function Home() {
   let employee = {
     firstName: firstName,
     lastName: lastName,
-    city: city,
-    zipCode: zipCode,
-    street: street,
-    state: state,
+    startDate: startDate,
     department: department,
     dateOfBirth: dateOfBirth,
-    startDate: startDate,
+    street: street,
+    city: city,
+    state: state,
+    zipCode: zipCode,
   }
   return (
     <div>
