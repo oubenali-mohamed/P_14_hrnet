@@ -154,7 +154,6 @@ tbody > tr {
   display: flex;
   flex-direction: row;
   margin-left: 35%;
-  margin-left: none;
   margin-bottom: 20px;
   padding-top: 20px;
 }
@@ -178,4 +177,53 @@ tbody > tr {
   border-color: #101010;
   background: #969da39c;
   color: #101010;
+}
+@media all and (min-width: 481px) and (max-width: 1200px) {
+  #root {
+    width: auto;
+  }
+  .selectAndSearch {
+    width: 80%;
+    margin-left: 100px;
+  }
+  .table {
+    margin: auto;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+@media all and (max-device-width: 480px) {
+  #root {
+    width: 100%;
+  }
+  .mobileHeader > div {
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .selectAndSearch {
+    margin-left: 200px;
+  }
+  .table {
+    margin: auto;
+    width: 100%;
+  }
+  table {
+    width: auto;
+    margin-left: -100px;
+  }
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    margin-left: 70%;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  .link_home_employe {
+    margin-left: 90%;
+  }
 }

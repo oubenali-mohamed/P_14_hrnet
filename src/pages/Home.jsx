@@ -165,7 +165,6 @@ function Home() {
               <Form.Select
                 className="SelectState"
                 aria-label="Default select example"
-                // onChange={handleChange}
               >
                 {cities.map((city, index) => (
                   <option className="stateUser" key={index}>
